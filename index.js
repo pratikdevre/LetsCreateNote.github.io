@@ -1,10 +1,8 @@
-console.log("Welcome to notes app. This is app.js");
 shownotes();
-
-// If user adds a note, add it to the localStorage
 let addBtn = document.getElementById("addBtn");
 addBtn.addEventListener("click", function (e) {
     let addNote = document.getElementById("addNote");
+    let addTitle = document.getElementById("addTitle");
     let notes = localStorage.getItem("notes");
     if (notes == null) {
         notesObj = [];
@@ -12,10 +10,14 @@ addBtn.addEventListener("click", function (e) {
     else {
         notesObj = JSON.parse(notes);
     }
-    
-    notesObj.push(addNote.value);
+    let myObj = {
+        title: addTitle.value,
+        text: addNote.value
+    }
+    notesObj.push(myObj);
     localStorage.setItem("notes", JSON.stringify(notesObj));
     addNote.value = "";
+    addTitle.value = "";
     shownotes();
 });
 
@@ -25,22 +27,15 @@ function shownotes() {
     if (notes == null) {
         notesObj = [];
     }
-
-   
-
-
-
-
-
     else {
         notesObj = JSON.parse(notes);
     }
     let html = "";
     notesObj.forEach(function (element, index) {
         html += `
-        <div class="notecard" style="border:1px blabk solid">
-            <h3>Note ${index + 1}</h3>
-            <p style=" border: 2px black double; max-width: 30em;    border-radius: 5px; background-color: #fff;">${element}</p>
+        <div class="notecard" style="border:2px black solid; background-color: rgb(228, 169, 169);; max-width: 40em; margin-top:5px;">
+            <h3>${element.title}</h3>  
+                <p style=" border: 2px black double; max-width: 30em; background-color:white;   border-radius: 5px; ">${element.text}</p>
                 <br>
             <button id="${index}" onclick="deleteNote(this.id)" class="delete">Delete Note</button>
              </div>`;
@@ -54,8 +49,7 @@ function shownotes() {
     }
 }
 
-function deleteNote(index){
-    // console.log("deleting", index);
+function deleteNote(index) {
     let notes = localStorage.getItem("notes");
     if (notes == null) {
         notesObj = [];
