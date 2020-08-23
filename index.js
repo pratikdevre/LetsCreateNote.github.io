@@ -33,7 +33,7 @@ function shownotes() {
     let html = "";
     notesObj.forEach(function (element, index) {
         html += `
-        <div class="notecard" style="border:2px black solid; background-color: rgb(228, 169, 169);; max-width: 40em; margin-top:5px;">
+        <div class="notecard" style="border:2px black solid; background-color: rgb(228, 169, 169);; max-width: 40em; margin-top:5px; display:inline-block">
             <h3>${element.title}</h3>  
                 <p style=" border: 2px black double; max-width: 30em; background-color:white;   border-radius: 5px; ">${element.text}</p>
                 <br>
