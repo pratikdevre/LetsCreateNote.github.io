@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Lobster', cursive;
+}
+.h1{
+    font-size: 30px;
+    font-style: oblique;
+    color: rgb(153 114 114);
+    margin-bottom: 10px;
+    font-weight: bolder;
+    
+
+}
+
+nav{
+    height: 70px;
+    padding: 13px 40px;
+    color: white;
+    background-color: rgb(56, 49, 49);
+    
+}
+nav a {
+    font-style: oblique;
+    font-size: 20px;
+    color: rgb(199, 177, 177);
+    text-decoration: none;
+}
+nav a:hover {
+    color: rgb(106, 96, 96);
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+
+
+.middleSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid black; */
+    padding: 50px;
+    height: 500px;
+}
+
+.middleSection label{
+    font-weight: bolder;
+    font-size: 15px;
+    color: rgb(170, 121, 121);
+}
+
+.middleSection textarea{
+    margin: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    width: 500px;
+    outline: none;
+    background-color: blanchedalmond;
+}
+
+
+.btn {
+    background-color: rgb(96, 96, 196);
+    color: cornsilk;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    font-family: 'Lobster', cursive;
+    margin: 5px;
+}
+
+.btn:hover{
+    font-weight: bolder;
+    background-color: rgb(57, 57, 134);
+    color: black;
+}
+
+
+.shownotes{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.notecard{
+    border:1px black solid;
+    background-color: rgb(228, 169, 169);
+    max-width: 30rem;
+    min-width: 25rem;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    margin: 5px;
+}
+.notecard p{
+    max-width: 30em;
+    background-color:white;
+    border-radius: 5px;
+    padding: 12px;
+}
+.notecard h3{
+    margin: 10px;
+    font-size: 20px;
+}
+
+
+@media (max-width: 590px) {
+    .middleSection textarea{
+        width: 450px;
+    }
+}
+@media (max-width: 500px) {
+    .middleSection textarea{
+        width: 400px;
+    }
+}
+@media (max-width: 440px) {
+    .middleSection textarea{
+        width: 350px;
+    }
+}
+@media (max-width: 370px) {
+    .middleSection textarea{
+        width: 270px;
+    }
+}

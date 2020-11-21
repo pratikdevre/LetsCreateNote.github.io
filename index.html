@@ -5,90 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="notepad.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="style.css">
     <title>Notes Adder</title>
-    <style>
-        body {
-            background-color: burlywood;
-            /* background-image: url('notes.png'); */
-            /* background-repeat: round; */
-        }
-
-        #header {
-            width: auto;
-            text-align: left;
-            border: 3px solid brown;
-            border-radius: 5px;
-            font-size: 20px;
-            font-style: oblique;
-            font-variant: small-caps;
-            color: white;
-            background-color: black;
-            /* position: fixed;
-            float: none; */
-        }
-
-        #header h1,
-        a {
-            margin-left: 25px;
-            color: red;
-            text-decoration: none;
-        }
-
-        #header a:hover {
-            font-weight: bolder;
-            font-stretch: ultra-expanded;
-        }
-
-        #addBtn,
-        .delete {
-            background-color: rgb(96, 96, 196);
-            color: cornsilk;
-            padding: 10px;
-            border-radius: 10px;
-        }
-
-        #addBtn:hover,
-        .delete:hover {
-            color: black;
-        }
-
-        textarea,
-        input {
-            border: 3px black solid;
-            border-bottom-right-radius: 10px;
-            border-top-left-radius: 10px;
-        }
-
-        .a {
-            width: auto;
-            border: 2px black double;
-        }
-    </style>
 </head>
 
 <body>
-    <div id="header">
-        <h1>Let's Create Notes</h1>
+    <nav>
+        <h1 class="h1">Let's Create Notes</h1>
         <a href="about.html">About</a>
+    </nav>
+
+    <div class="middleSection">
+        <h1 class="h1">Welcome to Notes Adder</h1>
+        <label>Add title</label>
+        <textarea id="addTitle" cols="35"></textarea>
+
+        <label>Add a note</label>
+        <textarea id="addNote" cols="35" rows="15"></textarea>
+        <button id="addBtn" class="btn">Add Note</button>
     </div>
     <hr>
     <hr>
+    <h1 class="h1" style="text-align: center;">Your Notes Will Show Here =></h1>
 
-    <center>
-        <div class="content">
-            <h1>Welcome to Notes Adder</h1>
-            <input id="addTitle" cols="35" rows="15" placeholder="                Add Title"></input><br>
-            <hr width="50px">
-            <textarea id="addNote" cols="35" rows="15" placeholder="              Add Note"></textarea><br>
-            <button id="addBtn">Add Note</button>
-            <hr>
-            <hr>
-        </div>
 
-        <h1>Your Notes Will Show Here =></h1>
-        <!-- <h2 id="createdNotes">No Notes To Show</h2> -->
-        <div id="notes" class="notecard"></div>
-    </center>
+    <div id="notes" class="shownotes">
+
+    </div>
+
     <script src="index.js"></script>
 </body>
 
